@@ -33,7 +33,7 @@ def speak(string):
     os.remove(file)
 playsound("startup.mp3")
 def wp(voice):
-    if "hey" in voice or "asistan" in voice:
+    if "sistem" in voice or "asistan" in voice:
             playsound("ac.mp3")
             speak("efendim")
             voice=record()
