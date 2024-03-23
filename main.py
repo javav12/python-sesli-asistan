@@ -9,7 +9,6 @@ import datetime
 import webbrowser
 
 r = sr.Recognizer()
-
 def record(ask=False):
     with sr.Microphone() as source:
         if ask:
@@ -73,8 +72,8 @@ def rp(voice):
         f= open(fn, "w",encoding="utf-8")
         f.writelines(tt)
         f.close()
-
-
+    if "orman yangınları nedir"in voice:
+        speak("Orman yangınları, sadece Türkiye'yi değil, tüm dünyayı etkileyen bir sorundur. Her yıl milyonlarca hektar ormanlık alan yok olmaktadır. Bu durum, küresel ısınmaya ve iklim değişikliğine katkıda bulunmaktadır.Orman yangınları ile mücadele için uluslararası iş birliği şarttır. Ormanların korunması ve yangınların önlenmesi için ortak çalışmalar yapılmalıdır.")
 
 while True:
     voice=record()
