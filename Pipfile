@@ -8,7 +8,7 @@ speechrecognition = "*"
 gtts = "*"
 pyaudio = "*"
 playsound = "==1.2.2"
-googletrans = "*"
+certifi = "*"
 
 [dev-packages]
 
