@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+speechrecognition = "*"
+gtts = "*"
+pyaudio = "*"
+playsound = "==1.2.2"
+certifi = "*"
+google-generativeai = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
