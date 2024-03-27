@@ -7,8 +7,25 @@ import os
 import time
 import datetime
 import webbrowser
+from configparser import ConfigParser
+import google.generativeai as genai
 
+
+#* değiskenler
+config = ConfigParser()
+config.read('settings.ini')
+api = config['API_KEY']['google_genetive_ai_api']
+
+#* ayarlamalar
+genai.configure(api_key=api)
 r = sr.Recognizer()
+
+for model in genai.list_models():
+    if 'generateContent' in model.supported_generation_methods:
+        print(model.name)
+model_gemini_pro = genai.GenerativeModel('gemini-pro')
+
+
 def record(ask=False):
     with sr.Microphone() as source:
         if ask:
@@ -30,9 +47,10 @@ def speak(string):
     tts.save(file)
     playsound(file)
     os.remove(file)
+
 playsound("startup.mp3")
 def wp(voice):
-    if "sistem" in voice or "asistan" in voice or "hey asistan" in voice or "hey sistem" in voice:
+    if "sistem" in voice or "asistan" in voice or "hey asistan" in voice or "hey sistem" in voice or "system" in voice:
             playsound("ac.mp3")
             speak("efendim")
             voice=record()
@@ -74,7 +92,11 @@ def rp(voice):
         f.close()
     if "orman yangınları nedir"in voice:
         speak("Orman yangınları, sadece Türkiye'yi değil, tüm dünyayı etkileyen bir sorundur. Her yıl milyonlarca hektar ormanlık alan yok olmaktadır. Bu durum, küresel ısınmaya ve iklim değişikliğine katkıda bulunmaktadır.Orman yangınları ile mücadele için uluslararası iş birliği şarttır. Ormanların korunması ve yangınların önlenmesi için ortak çalışmalar yapılmalıdır.")
-
+    if "yapay zeka" in voice:
+        speak("yapay zekada ne aratmak istersiniz")
+        promt = record()
+        rp = model_gemini_pro.generate_content(promt)
+        speak(str(rp.text))
 while True:
     voice=record()
     if voice != "":
