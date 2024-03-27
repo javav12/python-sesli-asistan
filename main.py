@@ -13,16 +13,18 @@ import google.generativeai as genai
 
 #* değiskenler
 config = ConfigParser()
-config.read('settings.ini')
-api = config['API_KEY']['google_genetive_ai_api']
-
-#* ayarlamalar
-genai.configure(api_key=api)
 r = sr.Recognizer()
+ini_var = False
+#* ayarlamalar
+dl = os.listdir()
+for i in dl:
+    if i == "settings.ini":
+        config.read('settings.ini')
+        api = config['API_KEY']['google_genetive_ai_api']
+        genai.configure(api_key=api)
+        ini_var= True
 
-for model in genai.list_models():
-    if 'generateContent' in model.supported_generation_methods:
-        print(model.name)
+
 model_gemini_pro = genai.GenerativeModel('gemini-pro')
 
 
@@ -93,10 +95,13 @@ def rp(voice):
     if "orman yangınları nedir"in voice:
         speak("Orman yangınları, sadece Türkiye'yi değil, tüm dünyayı etkileyen bir sorundur. Her yıl milyonlarca hektar ormanlık alan yok olmaktadır. Bu durum, küresel ısınmaya ve iklim değişikliğine katkıda bulunmaktadır.Orman yangınları ile mücadele için uluslararası iş birliği şarttır. Ormanların korunması ve yangınların önlenmesi için ortak çalışmalar yapılmalıdır.")
     if "yapay zeka" in voice:
-        speak("yapay zekada ne aratmak istersiniz")
-        promt = record()
-        rp = model_gemini_pro.generate_content(promt)
-        speak(str(rp.text))
+        if ini_var == True:
+            speak("yapay zekada ne aratmak istersiniz")
+            promt = record()
+            rp = model_gemini_pro.generate_content(promt)
+            speak(str(rp.text))
+        else:
+            speak("settings.ini dosyası bulunamadı veya adı yanlış")
 while True:
     voice=record()
     if voice != "":
