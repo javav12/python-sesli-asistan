@@ -9,6 +9,7 @@ gtts = "*"
 pyaudio = "*"
 playsound = "==1.2.2"
 certifi = "*"
+google-generativeai = "*"
 
 [dev-packages]
 
