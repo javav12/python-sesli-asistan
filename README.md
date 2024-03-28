@@ -29,11 +29,11 @@ Kütüphaneler requirements.txt de
 
 Yapay zeka özeliğini kulanmak istiyorsanız
 https://makersuite.google.com/app/apikey adresine gidip bir api key alın
-settings.ini dosyasını olusturun ardından içine
+settings.ini dosyasını olusturun ardından içine 
 
-    [API_KEY]
-    google_genetive_ai_api = api keyiniz
+    "[API_KEY]
+    google_genetive_ai_api = api keyiniz"
 
-yazınız ve api keyinizi giriniz
+ yazınız ve api keyinizi giriniz
 artık yapay zeka çalısır
 Eyer yardıma ihtiyacınız varsa:https://ai.google.dev/tutorials/python_quickstart rehberine baka bilirsiniz
