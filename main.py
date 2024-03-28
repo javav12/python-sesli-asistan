@@ -108,7 +108,7 @@ def rp(voice):
         
     if "yapay zeka" in voice and ini_var == False:
         speak("settings.ini dosyası bulunamadı veya adı yanlış")
-    if "qr code" in voice:
+    if "qr code" in voice or "qr kode" in voice or "qr kodu"in voice or "qr codu" in voice :
         speak("QRCode'un içine girceğiniz metin veya url terminal üzerinden giriniz")
         qd = input("QRCode'un içine girceğiniz metin veya url: ")
         qrcodeg.mkqr(qd)
