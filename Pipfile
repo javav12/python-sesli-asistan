@@ -10,6 +10,9 @@ pyaudio = "*"
 playsound = "==1.2.2"
 certifi = "*"
 google-generativeai = "*"
+qrcode = "*"
+opencv-python = "*"
+image = "*"
 
 [dev-packages]
 

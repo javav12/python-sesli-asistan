@@ -10,23 +10,24 @@ import webbrowser
 from configparser import ConfigParser
 import google.generativeai as genai
 
-
 #* değiskenler
 config = ConfigParser()
 r = sr.Recognizer()
 ini_var = False
-#* ayarlamalar
+
+#* settings.ini dosyasını kontrol etmek
 dl = os.listdir()
 for i in dl:
     if i == "settings.ini":
         ini_var= True
-
+#* settings.ini dosyası varsa yapay zeka ayarlamak
 if ini_var == True:
     config.read('settings.ini')
     api = config['API_KEY']['google_genetive_ai_api']
     genai.configure(api_key=api)
     model_gemini_pro = genai.GenerativeModel('gemini-pro')
 
+#* sesi kaydetmek
 def record(ask=False):
     with sr.Microphone() as source:
         if ask:
@@ -41,15 +42,18 @@ def record(ask=False):
             print("sistem hatası")
         return voice
 
-
+#* konusma
 def speak(string):
     tts= gTTS(text=string,lang="tr",slow=False)
     file= "answer.mp3"
     tts.save(file)
     playsound(file)
     os.remove(file)
-
+#* açılıs sesini oynatma
 playsound("startup.mp3")
+if ini_var == False:
+    speak("Uyarı! settings.ini dosyası bulunamadı veya adı yanlış assistan çalışmaya devam eder ama yapay zeka çalışamaz")
+#* asistan aktiflestirme
 def wp(voice):
     if "sistem" in voice or "asistan" in voice or "hey asistan" in voice or "hey sistem" in voice or "system" in voice:
             playsound("ac.mp3")
@@ -60,6 +64,7 @@ def wp(voice):
                 rp(voice)
                 print(voice)
             voice = ""
+#* yanıtlar
 def rp(voice):
     if "merhaba" in voice:
             speak("merhaba")
@@ -99,8 +104,9 @@ def rp(voice):
         rp = model_gemini_pro.generate_content(promt)
         speak(str(rp.text))
         
-    elif "yapay zeka" in voice and ini_var == False:
+    if "yapay zeka" in voice and ini_var == False:
         speak("settings.ini dosyası bulunamadı veya adı yanlış")
+#*ses dinleme
 while True:
     voice=record()
     if voice != "":
