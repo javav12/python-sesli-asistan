@@ -11,6 +11,7 @@ from configparser import ConfigParser
 import google.generativeai as genai
 import qrcodeg
 
+
 #* değiskenler
 config = ConfigParser()
 r = sr.Recognizer()
