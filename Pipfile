@@ -13,6 +13,7 @@ google-generativeai = "*"
 qrcode = "*"
 opencv-python = "*"
 image = "*"
+pygame = "*"
 
 [dev-packages]
 

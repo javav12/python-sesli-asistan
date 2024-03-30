@@ -25,3 +25,5 @@ etiket.pack()
 def baslat():
     form.mainloop()
 
+#! test
+#baslat()
