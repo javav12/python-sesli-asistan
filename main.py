@@ -51,10 +51,12 @@ def speak(string):
     tts.save(file)
     playsound(file)
     os.remove(file)
+
 #* açılıs sesini oynatma
 playsound("startup.mp3")
 if ini_var == False:
     speak("Uyarı! settings.ini dosyası bulunamadı veya adı yanlış assistan çalışmaya devam eder ama yapay zeka çalışamaz")
+
 #* asistan aktiflestirme
 def wp(voice):
     if "sistem" in voice or "asistan" in voice or "hey asistan" in voice or "hey sistem" in voice or "system" in voice:
@@ -66,6 +68,7 @@ def wp(voice):
                 rp(voice)
                 print(voice)
             voice = ""
+
 #* yanıtlar
 def rp(voice):
     if "merhaba" in voice:
