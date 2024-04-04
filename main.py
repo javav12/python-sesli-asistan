@@ -9,8 +9,8 @@ import datetime
 import webbrowser
 from configparser import ConfigParser
 import google.generativeai as genai
-import arayuz
-
+import qrcodeg 
+import dosya_düzenliyici
 #* değiskenler
 config = ConfigParser()
 r = sr.Recognizer()
@@ -33,13 +33,13 @@ if ini_var == True:
 def record(ask=False):
     with sr.Microphone() as source:
         if ask:
-            print(ask)
+            pass
         audio = r.listen(source)
         voice = ""
         try:
             voice = r.recognize_google(audio,language="tr-TR")
         except sr.UnknownValueError:
-            print("anlayamadım")
+            pass
         except sr.RequestError:
             print("sistem hatası")
         return voice
@@ -113,7 +113,7 @@ def rp(voice):
         speak("settings.ini dosyası bulunamadı veya adı yanlış")
     if "qr code" in voice or "qr kode" in voice or "qr kodu"in voice or "qr codu" in voice :
         speak("QR Code'un içine girceğiniz metin veya url ")
-        arayuz.baslat()
+        qrcodeg.baslat()
         speak("qr codunuz qrcodes klasörüne kaydedildi")
 #*ses dinleme
 while True:
