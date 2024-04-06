@@ -10,7 +10,7 @@ import webbrowser
 from configparser import ConfigParser
 import google.generativeai as genai
 import qrcodeg 
-import dosya_düzenliyici
+
 #* değiskenler
 config = ConfigParser()
 r = sr.Recognizer()
