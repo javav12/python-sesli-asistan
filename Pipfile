@@ -4,16 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-speechrecognition = "*"
-gtts = "*"
-pyaudio = "*"
-playsound = "==1.2.2"
-certifi = "*"
-google-generativeai = "*"
-qrcode = "*"
-opencv-python = "*"
-image = "*"
-pygame = "*"
 
 [dev-packages]
 
