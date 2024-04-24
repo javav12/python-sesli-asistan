@@ -27,13 +27,49 @@ Proje temellerini aldığım kaynak: https://www.youtube.com/watch?v=n6tzXfnp6A8
 
 Kütüphaneler requirements.txt de
 
-Yapay zeka özeliğini kulanmak istiyorsanız
-https://makersuite.google.com/app/apikey adresine gidip bir api key alın
-settings.ini dosyasını olusturun ardından içine 
 
-    "[API_KEY]
-    google_genetive_ai_api = api keyiniz"
 
- yazınız ve api keyinizi giriniz
-artık yapay zeka çalısır
-Eyer yardıma ihtiyacınız varsa:https://ai.google.dev/tutorials/python_quickstart rehberine baka bilirsiniz
+
+
+█▄▀ █░█ █▀█ █░█ █░░ █░█ █▀▄▀█ ▀
+█░█ █▄█ █▀▄ █▄█ █▄▄ █▄█ █░▀░█ ▄
+
+    windows:
+        pip -r requirements.txt
+    linux:
+        pip3 -r requirements.txt
+        (eğer pyaudio ile ilgili hata alıyorsanız internete aratmanız lazım ama bu siteyi inceleye  bilir sinizhttps://stackoverflow.com/questions/20023131/cannot-install-pyaudio-gcc-error)
+
+
+
+█▀▀ ▄▀█ █░░ █ █▀ ▀█▀ █ █▀█ █▀▄▀█ ▄▀█ ▀
+█▄▄ █▀█ █▄▄ █ ▄█ ░█░ █ █▀▄ █░▀░█ █▀█ ▄
+
+    windows:
+        tüm paketleri kurduktan sonra main.py ı çalıstırın
+    linux:
+        tüm paketleri kurduktan sonra sırası ile:
+            jack_control start
+            python3 main.py veya ide den baslatın
+            programı kapatırken:
+                jack_control exit
+                yazınız
+
+
+
+
+
+█▄█ ▄▀█ █▀█ ▄▀█ █▄█   ▀█ █▀▀ █▄▀ ▄▀█ ▀
+░█░ █▀█ █▀▀ █▀█ ░█░   █▄ ██▄ █░█ █▀█ ▄
+
+     https://makersuite.google.com/app/apikey adresine gidip bir api key alın 
+     settings.ini dosyasını olusturun ardından içine 
+
+        "[API_KEY]
+        google_genetive_ai_api = api keyiniz"
+
+    yazınız ve api keyinizi giriniz
+    artık yapay zeka çalısır
+    Eyer yardıma ihtiyacınız varsa:https://ai.google.dev/tutorials/python_quickstart rehberine baka bilirsiniz
+
+
