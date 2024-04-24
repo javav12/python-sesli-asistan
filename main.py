@@ -10,7 +10,6 @@ import webbrowser
 from configparser import ConfigParser
 import google.generativeai as genai
 import qrcodeg 
-import asyncio
 
 
 #* değiskenler
