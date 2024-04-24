@@ -12,6 +12,7 @@ def terminal_komutu_calistir(komut):
     cikti, hata = islem.communicate()
     cikti_metni = cikti.decode()
     return cikti_metni
+
 #* isletim sistemi kontrolü
 def kontrol():
     for i in os.uname():

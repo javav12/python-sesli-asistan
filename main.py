@@ -10,12 +10,12 @@ import webbrowser
 from configparser import ConfigParser
 import google.generativeai as genai
 import qrcodeg 
-
+import jackcontroler
 #* değiskenler
 config = ConfigParser()
 r = sr.Recognizer()
 ini_var = False
-
+linux = False
 #* settings.ini dosyasını kontrol etmek
 dl = os.listdir()
 for i in dl:
@@ -28,6 +28,15 @@ if ini_var == True:
     api = config['API_KEY']['google_genetive_ai_api']
     genai.configure(api_key=api)
     model_gemini_pro = genai.GenerativeModel('gemini-pro')
+
+
+#* isletim sistemini kontrol etmek
+if jackcontroler.kontrol == True:
+    linux = True
+
+#* jack kontroler baslatmak
+if linux == True:
+    jackcontroler.jack_baslat()
 
 #* sesi kaydetmek
 def record(ask=False):
@@ -84,6 +93,8 @@ def rp(voice):
             time.sleep(1)
             speak("0")
             playsound("shutdown.mp3")
+            if linux == True:
+                jackcontroler.jack_durdur()
             exit()
     if "saat kaç" in voice:
             speak(datetime.datetime.now().strftime("%H:%M"))
@@ -120,7 +131,10 @@ while True:
     voice=record()
     if voice != "":
         voice = voice.lower()
+        if voice == "sistemi kapat":
+            rp(voice)
         wp(voice)
         print(voice)
         voice = ""
+
 
