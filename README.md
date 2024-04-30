@@ -55,7 +55,7 @@ Kütüphaneler requirements.txt de
             programı kapatırken:
                 jack_control exit
                 yazınız
-
+ 
 
 
 
