@@ -10,8 +10,8 @@ import webbrowser
 from configparser import ConfigParser
 import google.generativeai as genai
 # import qrcodeg 
-def kapat():
-         exit()
+
+
 #* ana fonlsiyon
 def mainf():
     #* değiskenler
@@ -132,3 +132,4 @@ def mainf():
             voice = ""
 
 
+mainf()
