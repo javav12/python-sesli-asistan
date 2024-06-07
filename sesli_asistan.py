@@ -9,9 +9,9 @@ import datetime
 import webbrowser
 from configparser import ConfigParser
 import google.generativeai as genai
-# import qrcodeg 
-def kapat():
-         exit()
+import qrcodeg 
+
+
 #* ana fonlsiyon
 def mainf():
     #* değiskenler
@@ -118,7 +118,7 @@ def mainf():
             speak("settings.ini dosyası bulunamadı veya adı yanlış")
         if "qr code" in voice or "qr kode" in voice or "qr kodu"in voice or "qr codu" in voice :
             speak("QR Code'un içine girceğiniz metin veya url ")
-            # qrcodeg.baslat()
+            qrcodeg.baslat()
             speak("qr codunuz qrcodes klasörüne kaydedildi")
     #*ses dinleme
     while True:
@@ -132,3 +132,4 @@ def mainf():
             voice = ""
 
 
+mainf()
