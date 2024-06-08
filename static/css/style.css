@@ -1,0 +1,86 @@
+body {
+    background-color: #232323;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.asistan-mesaji {
+    position: absolute;
+    background-color: #313131;
+    border-radius: 10px;
+    width: 500px;
+    left: 10px;
+    height: calc(height + 100);
+    margin-top: 10px;
+}
+
+.asistan-mesaji h3 {
+    position: relative;
+    left: 70px;
+    top: -47px;
+}
+
+
+.asistan-mesaji img {
+    position: relative;
+    border-radius: 100%;
+    height: 45px;
+    width: 45px;
+    left: 10px;
+    top: 10px;
+}
+
+.asistan-mesaji p {
+    position: relative;
+    left: 10px;
+}
+
+
+
+.kullanıcı-mesaji {
+    position: absolute;
+    background-color: #313131;
+    border-radius: 10px;
+    width: 500px;
+    right: 10px;
+    height: calc(height + 100);
+    margin-top: 10px;
+}
+
+
+
+
+.kullanıcı-mesaji img {
+    position: relative;
+    top: 10px;
+    right: -440px;
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+}
+
+
+.kullanıcı-mesaji p {
+    position: relative;
+    left: 10px;
+}
+
+.code {
+    border-radius: 10px;
+    width: 450px;
+    height: calc(height + 10);
+    background-color: #272727;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(0, 217, 255);
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.messages {
+    margin-top: 0px;
+}
